@@ -13,7 +13,6 @@ app.use(express.urlencoded({extended: true}))
 authRouter.post('/register', async (req, res, next) => {
     try {
         var hashedPassword = bcrypt.hashSync(req.body.password, 8)
-        let isAdmin = req.body.admin
 
         const user = new User({
             username: req.body.username,
@@ -50,8 +49,7 @@ authRouter.post('/login', async (req, res, next) => {
             expiresIn: 86400
         })
         localStorage.setItem('authtoken', token)
-        localStorage.setItem('user', JSON.stringify(user))
-
+        res.redirect('/home')
     }
     catch (err) {
         next(err)
