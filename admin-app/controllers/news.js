@@ -1,17 +1,6 @@
 const newsRouter = require('express').Router()
 const News = require('../models/news')
 
-//GET ALL NEWS
-newsRouter.get('/', async (req, res, next) => {
-    try {
-        const newsList = await News.find({})
-        
-    }
-    catch (err) {
-
-    }
-})
-
 
 //ADD NEWS
 newsRouter.post('/', async (req, res, next) => {
