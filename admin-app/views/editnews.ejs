@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Admin Home</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Admin</a>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/newsform">NewsForm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/editnews">EditNews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <hr>
+        <div class="container" style="align-items: center;">
+            <h1 style="text-align: center;">News List</h1>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped" id="myTable">
+                    <thead class="tdhead-dark">
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Published At</th>
+                            <th>Edit/Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i < newsList.length; i++) { %>
+                            <tr>
+                                <td><%= newsList[i].title %></td>
+                                <td><%= newsList[i].description %></td>
+                                <td><%= newsList[i].publish_date %></td>
+                                <td>
+                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-secondary">Delete</button>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

@@ -34,7 +34,6 @@ authRouter.post('/register', async (req, res, next) => {
 
 authRouter.post('/login', async (req, res, next) => {
     try {
-        console.log('body: ', req.body)
         const string = encodeURIComponent('! Please enter valid value')
         const user = await User.findOne({username: req.body.username})
         if (!user) {

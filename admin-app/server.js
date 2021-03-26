@@ -3,6 +3,7 @@ const express = require('express')
 const port = 3000;
 const LocalStorage = require('node-localstorage').LocalStorage
 const localStorage = new LocalStorage('./scratch')
+const News = require('./models/news')
 
 app.set('view engine', 'ejs')
 
@@ -15,6 +16,20 @@ app.get('/', (req, res) => {
 
 app.get('/home', (req, res) => {
     res.render('home')
+})
+
+app.get('/newsform', (req, res) => {
+    res.render('newsform')
+})
+
+app.get('/editnews', async (req, res, next) => {
+    try {
+        const newsList = await News.find({})
+        res.render('editnews', {newsList})
+    }
+    catch (err) {
+        next(err)
+    }
 })
 
 app.get('/logout', (req, res) => {

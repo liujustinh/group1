@@ -11,8 +11,8 @@ app.use('/users', usersRouter)
 const authRouter = require('./controllers/auth')
 app.use('/api/auth', authRouter)
 
-
-
+const newsRouter = require('./controllers/news')
+app.use('/news', newsRouter)
 
 
 module.exports = app;
