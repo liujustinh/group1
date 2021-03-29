@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <%-include ("./partials/head"); %>
   </head>
-  <body>
+  <body style="overflow:scroll;background-color:rgb(213, 252, 239)">
     <%-include ("./partials/header"); %>
     <h1 class="text-center">Simple Chat with Node</h1>
     <div class="input-group my-5 justify-content-center">
@@ -32,8 +32,8 @@
 
         <div class="col-9 FixedHeightContainer">
           <div
-            style="background-color: white;height: 70vh"
-            class="FixedHeightContainer"
+            style="background-color: white;height: 55vh;overflow:scroll"
+            
             id="message"
           >
         
@@ -46,7 +46,7 @@
         
         
         </div>
-          <div style="position: absolute; bottom: 0 ;width:76%" class="contaner-fluid">
+          <div class="contaner-fluid">
             <div class="input-group" >
               <input id="chatText" type="text" class="form-control" />
               <button id="chat" class="btn btn-secondary">

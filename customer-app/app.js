@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const config = require('./config');
 const port = config.port;
+const http = require('http');
 
 //////////////////////////////
 const News = require('./models/news')
@@ -16,7 +17,7 @@ mongoose.connect(mongourl, { useNewUrlParser: true, useUnifiedTopology: true})
 })
 ///////////////////////////////
 
-
+app.set('port', port);
 app.use(express.static(__dirname+'/public'));
 
 app.set('view engine', 'ejs');
@@ -42,4 +43,56 @@ app.get('/about', (req, res) => res.render('about')); // About Us Page
 app.use('/api', apiRoutes);
 
 
-app.listen(port, ()=>console.log(`Main server running on port ${port}`));
+///////Socket Con//////
+var server = http.createServer(app);
+let io = require('socket.io')().listen(server);
+var allClients = {};
+connectCounter=0;
+
+io.sockets.on('connection',  (socket) => {
+   
+
+    io.sockets.emit("counter",++connectCounter)
+    io.sockets.emit('userlist', allClients);
+  socket.on('disconnect', function() { 
+    
+    delete allClients[socket.id]
+    connectCounter--;
+    io.sockets.emit("counter",connectCounter)
+    socket.broadcast.emit('userlist', allClients)
+  
+  })
+  // Set the nickname property for a given client
+  socket.on('nick', (nick) => {
+      socket.nickname=nick
+      allClients[socket.id]=(socket.nickname);
+      
+      io.sockets.emit('userlist', allClients);
+  });
+
+ 
+
+  // Relay chat data to all clients
+  socket.on('chat', (data) => {
+    
+
+          let nickname = !socket.nickname? 'Anonymous' : socket.nickname;
+
+          let payload = {
+              message: data.message,
+              nick: nickname,
+          };
+
+          socket.emit('chat',payload);
+          socket.broadcast.emit('chat', payload);
+     
+  });
+});
+
+
+
+///////
+
+
+
+server.listen(port, ()=>console.log(`Main server running on port ${port}`));
