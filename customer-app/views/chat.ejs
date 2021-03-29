@@ -12,8 +12,8 @@
   <%-include ("./partials/head"); %>
   </head >
   <style>
-    li {background: white ; color: rgb(17, 17, 17); }
-li:nth-child(odd) { background: rgb(17, 17, 17); color: white; }
+    .nickname {background: white ; color: rgb(17, 17, 17); }
+.nickname:nth-child(odd) { background: rgb(17, 17, 17); color: white; }
   </style>  
   <body style="overflow:scroll;background-color:rgb(213, 252, 239)">
     <%-include ("./partials/header"); %>
@@ -112,7 +112,7 @@ li:nth-child(odd) { background: rgb(17, 17, 17); color: white; }
     keys.forEach((item) => {
       if (item == null) return;
       $("#activeuser").append(
-        `<li class="list-group-item">${item}<br/></li>`
+        `<li class="list-group-item nickname">${item}<br/></li>`
       );
     });
   });
