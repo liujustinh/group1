@@ -36,6 +36,7 @@ app.get('/', async (req, res, next) => {
 })
 
 app.get('/sports', (req, res) => res.render('sports')); // Sports Page
+app.get('/chat', (req, res) => res.render('chat')); // Sports Page
 app.get('/contact', (req, res) => res.render('contact',{ errorMsg: null, successMsg: null })); // Contact Us Page
 app.get('/about', (req, res) => res.render('about')); // About Us Page
 app.use('/api', apiRoutes);

@@ -1,0 +1,27 @@
+html, body{
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(226, 255, 253);
+  /* overflow: auto; */
+}
+input {
+    line-height: 2em;
+}
+.FixedHeightContainer
+{   
+    height: 100vh;   
+    padding:3px; 
+      overflow: auto;
+}
+li {background: white ; color: rgb(17, 17, 17); }
+li:nth-child(odd) { background: rgb(17, 17, 17); color: white; }
+
+
+
+
+
+
+
+
+
+
