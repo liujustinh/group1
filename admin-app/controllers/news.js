@@ -21,4 +21,15 @@ newsRouter.post('/', async (req, res, next) => {
     }
 })
 
+//GET 3 LATEST NEWS
+newsRouter.get('/', async (req, res, next) => {
+    try {
+        const news = await News.find({})
+        
+    }
+    catch (err) {
+        next(err)
+    }
+})
+
 module.exports = newsRouter

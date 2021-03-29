@@ -1,0 +1,34 @@
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    40% { left: -100%; }
+    60% { left: -100%; }
+    80% { left: -200%; }
+    100% { left: -200%; }
+}
+    
+body {
+    margin: 0;
+    padding-top: 100px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.mainNews {
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8vh; 
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+}
+

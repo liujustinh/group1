@@ -8,27 +8,8 @@
         <title>Admin Home</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">24x7 Admin</a>
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/newsform">NewsForm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/editnews">EditNews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <hr>
+        <%-include ("./partials/navbar"); %>
+
         <div class="container" style="align-items: center;">
             <h2>
                 Welcome to the admin page!
