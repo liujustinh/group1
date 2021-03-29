@@ -13,15 +13,5 @@ input {
     padding:3px; 
       overflow: auto;
 }
-li {background: white ; color: rgb(17, 17, 17); }
+/*li {background: white ; color: rgb(17, 17, 17); }
 li:nth-child(odd) { background: rgb(17, 17, 17); color: white; }
-
-
-
-
-
-
-
-
-
-
