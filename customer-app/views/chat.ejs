@@ -10,7 +10,11 @@
   
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <%-include ("./partials/head"); %>
-  </head>
+  </head >
+  <style>
+    li {background: white ; color: rgb(17, 17, 17); }
+li:nth-child(odd) { background: rgb(17, 17, 17); color: white; }
+  </style>  
   <body style="overflow:scroll;background-color:rgb(213, 252, 239)">
     <%-include ("./partials/header"); %>
     <h1 class="text-center">Simple Chat with Node</h1>
