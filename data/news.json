@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "6064c08e265ab63f744e52a8"
+  },
+  "title": "Here’s how Biden’s $2 trillion infrastructure plan addresses climate change",
+  "description": "If signed into law, the proposal would rank as one of the largest federal efforts ever to curb the country’s greenhouse gas emissions and advance the president’s commitment to put the country on a path to net-zero carbon emissions by 2050.",
+  "url": "https://www.cnbc.com/2021/03/31/biden-infrastructure-plan-spending-on-climate-change-clean-energy.html",
+  "image_url": "https://image.cnbcfm.com/api/v1/image/106831060-1611776536791-gettyimages-1230821142-AFP_8ZN6A4.jpeg?v=1611776605&w=740&h=416",
+  "publish_date": "March 31, 2021",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6064c1d2265ab63f744e52a9"
+  },
+  "title": "Cuomo signs bill legalizing adult-use, recreational marijuana in New York",
+  "description": "Gov. Andrew Cuomo signed legislation Wednesday morning to legalize adult-use, recreational cannabis in New York and create the country’s second-largest recreational marijuana market.",
+  "url": "https://www.politico.com/states/new-jersey/story/2021/03/31/cuomo-signs-bill-legalizing-adult-use-recreational-marijuana-in-new-york-1370745",
+  "image_url": "https://media.vanityfair.com/photos/60635e5a5e531a46c84d7e51/master/w_2560%2Cc_limit/Andrew-Cuomo.jpg",
+  "publish_date": "March 30, 2021",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6064c302608e5237ec871432"
+  },
+  "title": "Honda recalls over 628,000 US vehicles to replace fuel pumps",
+  "description": "DETROIT -- Honda is recalling more than 628,000 vehicles in the U.S. to replace fuel pumps that can fail, causing the engines to stall.  The recall covers much of the Honda and Acura model lineup from the 2018 to 2020 model years including the CR-V small SUV, the company's top-selling U.S. vehicle.",
+  "url": "https://abcnews.go.com/US/wireStory/honda-recalls-628000-us-vehicles-replace-fuel-pumps-76787536?cid=clicksource_4380645_3_heads_hero_live_headlines_hed",
+  "image_url": "https://www.carlogos.org/car-logos/honda-logo-1700x1150.png",
+  "publish_date": "March 20, 2021",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6064c3b1608e5237ec871433"
+  },
+  "title": "Pfizer says Covid vaccine 100 percent effective in children ages 12 to 15",
+  "description": "Pfizer says its Covid-19 vaccine is safe and 100 percent effective in preventing the illness in teenagers ages 12 to 15.",
+  "url": "https://www.nbcnews.com/health/health-news/pfizer-says-its-covid-vaccine-100-percent-effective-young-teens-n1262550",
+  "image_url": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/G35PQBQOJVBNVB3IUPSKE5NRLE.jpeg&w=916",
+  "publish_date": "March 28, 2021",
+  "__v": 0
+}]
