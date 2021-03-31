@@ -6,15 +6,13 @@
     80% { left: -200%; }
     100% { left: -200%; }
 }
-    
+
 body {
     margin: 0;
     padding-top: 100px;
 }
 
-.navbar {
-    margin-bottom: 20px;
-}
+
 
 .mainNews {
     margin-top: 50px;
@@ -32,3 +30,35 @@ footer {
     text-align: center;
 }
 
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    font-family:'Zilla Slab', serif; font-size: 20px;
+  }
+
+
+.navbar li {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25% ;
+    text-align: left;
+    overflow: auto;
+    margin-block-end: 0ex;
+    display: flex !important;
+    justify-content: space-between;
+  } 
+
+.navbar-nav {
+    width: 100%;
+}
+
+.navbar-brand {
+    padding-right: 40px;
+}
+
+  /* Add a background color on mouse-over */np
+.navbar a:hover {
+    background-color: darkblue;
+}

@@ -6,6 +6,7 @@ const http = require('http');
 
 //////////////////////////////
 const News = require('./models/news')
+const Sports = require('./models/sports')
 const mongoose = require('mongoose')
 const mongourl = 'mongodb://127.0.0.1:27017/group1';
 mongoose.connect(mongourl, { useNewUrlParser: true, useUnifiedTopology: true})
@@ -35,8 +36,16 @@ app.get('/', async (req, res, next) => {
     const newsList = await News.find({}).limit(4)
     res.render('index', {newsList})
 })
-
-app.get('/sports', (req, res) => res.render('sports')); // Sports Page
+//Sports page
+app.get('/sports', async (req, res, next) => {
+    try {
+        const sportsList = await Sports.find({})
+        res.render('sports', {sportsList})
+    }
+    catch (err) {
+        next(err)
+    }
+})
 app.get('/chat', (req, res) => res.render('chat')); // Sports Page
 app.get('/contact', (req, res) => res.render('contact',{ errorMsg: null, successMsg: null })); // Contact Us Page
 app.get('/about', (req, res) => res.render('about')); // About Us Page

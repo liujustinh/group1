@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <%-include ("./partials/head"); %>
+    <title>Sports News</title>
+</head>
+
+<body > 
+    <%-include ("./partials/header"); %>
+    <hr>
+    <div class="container" style="align-items: center;">
+        <h1 style="text-align: center; font-family:lu">Sports News</h1>
+        <div class="table-responsive">
+            <table class="table table-hover table-striped" id="myTable">
+                <thead class="tdhead-dark">
+
+                </thead>
+                <% for(var i=0; i < sportsList.length; i++) { %>
+                <tbody style="font-family: 'Courier New', monospace; color:rgb(6, 6, 29);">
+                    <tr >
+                        <td><div class="card" style="width: 30;">
+                            <img class="icon"   src="<%= sportsList[i].image_url%>" style="width: 100%; height: fit-content;">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= sportsList[i].title %></h5>
+                                <p class="card-text"><%= sportsList[i].description %></p>
+                                <p> <%= sportsList[i].publish_date %> </p>
+                                <%i++%>
+                            </div>
+                        </div></td>
+                        <td><div class="card" style="width:30 " >
+                            <img class="icon"   src="<%= sportsList[i].image_url%>" style="width: 100%; height: fit-content;">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= sportsList[i].title %></h5>
+                                <p class="card-text"><%= sportsList[i].description %></p>
+                                <p> <%= sportsList[i].publish_date %> </p>
+                                
+                            </div>
+                        </div></td>
+                    </tr>
+                      
+
+                            <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div>
+            <%- include ("./partials/footer"); %>
+        </div>
+    </footer>
+</body>
+</html>

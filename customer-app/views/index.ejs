@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%-include ("./partials/head"); %>
-    </head>
-    <body>
-        <%-include ("./partials/header"); %>
 
-        <div><%-include ("./partials/news", {newsList}); %></div>
-        <div id="mainNews" class="container mainNews">
+<head>
+    <%-include ("./partials/head"); %>
+</head>
+
+<center><div id="openweathermap-widget-11" ></div>
+<script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+<script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = []; window.myWidgetParam.push({ id: 11, cityid: '4684904', appid: 'a2c7eb4138e612ed697ff7470f5e7085', units: 'metric', containerid: 'openweathermap-widget-11', }); (function () { var script = document.createElement('script'); script.async = true; script.charset = "utf-8"; script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s); })();</script>
+</center>
+<body >
+    <%-include ("./partials/header"); %>
+    <br>
+        <div>
+            <%-include ("./partials/news", {newsList}); %>
+        </div>
+        <div id="mainNews" class="container mainNews"  >
             <div class="card">
                 <img id="mainNewsImg" src="<%= newsList[0].image_url %>" class="card-img-top">
                 <div class="card-body">
-                    <h5 id="mainNewsTitle" class="card-title"><%= newsList[0].title %></h5>
-                    <p id="mainNewsDescription" class="card-text"><%= newsList[0].description %></p>
+                    <h5 id="mainNewsTitle" class="card-title">
+                        <%= newsList[0].title %>
+                    </h5>
+                    <p id="mainNewsDescription" class="card-text">
+                        <%= newsList[0].description %>
+                    </p>
                 </div>
                 <div class="card-body">
-                    <a id="mainNewsLink" href="<%= newsList[0].url %>" class="card-link" target="_blank">View article</a>
+                    <a id="mainNewsLink" href="<%= newsList[0].url %>" class="card-link" target="_blank">View
+                        article</a>
                 </div>
-            </div>                
+            </div>
         </div>
-            <footer>
-                <div><%- include ("./partials/footer"); %></div>
-            </footer>
+        <footer>
+            <div>
+                <%- include ("./partials/footer"); %>
+            </div>
+        </footer>
 
-    </body>
+</body>
+
 </html>
