@@ -13,16 +13,19 @@ app.use(express.urlencoded({extended: true}))
 authRouter.post('/register', async (req, res, next) => {
     try {
         var hashedPassword = bcrypt.hashSync(req.body.password, 8)
-
         const user = new User({
             username: req.body.username,
-            password: hashedPassword
+            password: hashedPassword,
+            email: req.body.email
         })
 
         const savedUser = await user.save()
         const token = jwt.sign({id: savedUser._id }, config.secret, {
             expiresIn: 86400
         })
+
+        localStorage.setItem('username', user.username)
+        localStorage.setItem('email', user.email)
 
         const string = encodeURIComponent('Successfully registered! Please login.')
         res.redirect('/?msg=' + string)

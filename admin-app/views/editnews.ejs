@@ -11,6 +11,9 @@
         <%-include ("./partials/navbar"); %>
         
         <div class="container" style="align-items: center;">
+            <div class="alert alert-success">
+                Username: <%= username %> , Email: <%= email %>
+            </div>
             <h1 style="text-align: center;">News List</h1>
             <div class="table-responsive">
                 <table class="table table-hover table-striped" id="myTable">
@@ -29,8 +32,14 @@
                                 <td><%= newsList[i].description %></td>
                                 <td><%= newsList[i].publish_date %></td>
                                 <td>
-                                    <button class="btn btn-primary">Edit</button>
-                                    <button class="btn btn-secondary">Delete</button>
+                                    <form method="POST" action="http://localhost:3000/news/edit">
+                                        <input type="hidden" name="_id" value="<%= newsList[i]._id %>">
+                                        <button class="btn btn-primary" type="submit">Edit</button>
+                                    </form>
+                                    <form method="POST" action="http://localhost:3000/news/delete">
+                                        <input type="hidden" name="_id" value="<%= newsList[i]._id %>">
+                                        <button class="btn btn-secondary" type="submit">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             <% } %>

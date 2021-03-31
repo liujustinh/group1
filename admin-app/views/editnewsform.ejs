@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Admin Home</title>
+    </head>
+    <body>
+        <%-include ("./partials/navbar"); %>
+        
+        <div class="container" style="align-items: center;">
+            <div class="alert alert-success">
+                Username: <%= username %> , Email: <%= email %>
+            </div>
+            <h1 style="text-align: center;">Edit News Form</h1>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped" id="myTable">
+                    <thead class="tdhead-dark">
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Url</th>
+                            <th>Image Url</th>
+                            <th>Publish Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><%= newsToBeEdited.title %></td>
+                            <td><%= newsToBeEdited.description %></td>
+                            <td><%= newsToBeEdited.url %></td>
+                            <td><%= newsToBeEdited.image_url %></td>
+                            <td><%= newsToBeEdited.publish_date %></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <form style="width: 75%;" method="POST" action="http://localhost:3000/news/editnews">
+                <input type="hidden" name="_id" value="<%= newsToBeEdited._id %>">
+                <label for="title">New Title</label>
+                <input type="text" class="form-control" name="title" id="title" required>
+                <br>
+                <label for="description">New Description</label>
+                <input type="text" class="form-control" name="description" id="description" required>
+                <br>
+                <label for="url">New Url</label>
+                <input type="text" class="form-control" name="url" id="url" required>
+                <br>
+                <label for="image_url">New Url To Image</label>
+                <input type="text" class="form-control" name="image_url" id="image_url" required>
+                <br>
+                <label for="publish_date">New Publishing Date</label>
+                <input type="text" class="form-control" name="publish_date" id="publish_date" required>
+                <br>
+                <button class="btn btn-primary" type="submit">Edit</button>
+            </form>
+        </div>
+
+    </body>
+</html>

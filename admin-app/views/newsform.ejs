@@ -11,6 +11,9 @@
         <%-include ("./partials/navbar"); %>
 
         <div class="container" style="align-items: center;">
+            <div class="alert alert-success">
+                Username: <%= username %> , Email: <%= email %>
+            </div>
             <h1 style="text-align: center;">Add News</h1>
             <form style="width: 75%;" method="POST" action="http://localhost:3000/news">
                 <label for="title">Title</label>

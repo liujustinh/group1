@@ -15,17 +15,23 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home', (req, res) => {
-    res.render('home')
+    const username = localStorage.getItem('username')
+    const email = localStorage.getItem('email')
+    res.render('home', {username, email})
 })
 
 app.get('/newsform', (req, res) => {
-    res.render('newsform')
+    const username = localStorage.getItem('username')
+    const email = localStorage.getItem('email')
+    res.render('newsform', {username, email})
 })
 
 app.get('/editnews', async (req, res, next) => {
     try {
+        const username = localStorage.getItem('username')
+        const email = localStorage.getItem('email')
         const newsList = await News.find({})
-        res.render('editnews', {newsList})
+        res.render('editnews', {newsList, username, email})
     }
     catch (err) {
         next(err)
@@ -33,7 +39,8 @@ app.get('/editnews', async (req, res, next) => {
 })
 
 app.get('/logout', (req, res) => {
-    localStorage.removeItem('authtoken')
+    //localStorage.removeItem('authtoken')
+    localStorage.clear()
     res.redirect('/')
 })
 
