@@ -5,15 +5,16 @@
     <%-include ("./partials/head"); %>
 </head>
 
-<center><div id="openweathermap-widget-11" ></div>
-<script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
-<script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = []; window.myWidgetParam.push({ id: 11, cityid: '4684904', appid: 'a2c7eb4138e612ed697ff7470f5e7085', units: 'metric', containerid: 'openweathermap-widget-11', }); (function () { var script = document.createElement('script'); script.async = true; script.charset = "utf-8"; script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s); })();</script>
-</center>
 <body >
     <%-include ("./partials/header"); %>
     <br>
+    <center><div id="openweathermap-widget-11" ></div>
+        <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+        <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = []; window.myWidgetParam.push({ id: 11, cityid: '4684904', appid: 'a2c7eb4138e612ed697ff7470f5e7085', units: 'metric', containerid: 'openweathermap-widget-11', }); (function () { var script = document.createElement('script'); script.async = true; script.charset = "utf-8"; script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s); })();</script>
+    </center>
+    <br><br>
         <div>
-            <%-include ("./partials/news", {newsList}); %>
+            <%- include ("./partials/imageSlider");%>
         </div>
         <div id="mainNews" class="container mainNews"  >
             <div class="card">
