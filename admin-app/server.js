@@ -30,7 +30,7 @@ app.get('/editnews', async (req, res, next) => {
     try {
         const username = localStorage.getItem('username')
         const email = localStorage.getItem('email')
-        const newsList = await News.find({})
+        const newsList = await News.find({}).sort({_id:-1})
         res.render('editnews', {newsList, username, email})
     }
     catch (err) {

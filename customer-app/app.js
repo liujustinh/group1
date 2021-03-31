@@ -33,13 +33,13 @@ app.use(express.urlencoded({ extended: true }));
 
 //Homepage
 app.get('/', async (req, res, next) => {
-    const newsList = await News.find({}).limit(4)
+    const newsList = await News.find({}).sort({_id:-1}).limit(4)
     res.render('index', {newsList})
 })
 //Sports page
 app.get('/sports', async (req, res, next) => {
     try {
-        const sportsList = await Sports.find({})
+        const sportsList = await Sports.find({}).sort({_id:-1})
         res.render('sports', {sportsList})
     }
     catch (err) {
